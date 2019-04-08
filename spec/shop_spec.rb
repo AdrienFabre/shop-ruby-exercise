@@ -34,4 +34,9 @@ subject(:shop) { described_class.new(price_table) }
   it 'gives -1 for an illegal input 6' do 
     expect(shop.checkout('6')).to eq -1 
   end
+
+  it 'gives 115 for multiple legal entry' do
+    expect(shop.checkout('ABCD')).to eq 115
+  end
+
 end

@@ -7,7 +7,19 @@ class Shop
   end
 
   def checkout(units)
-   price_table[unit] || -1
+    unit_prices = []
+    units.split('').each do |unit|
+      return -1 if illegal?(unit)
+      unit_prices << price_table[unit.to_s]
+    end
+    print unit_prices
+    unit_prices.inject(:+)
+  end
+
+  private
+
+  def illegal?(unit)
+    price_table[unit.to_s].nil?
   end
  
 end
