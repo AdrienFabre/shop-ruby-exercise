@@ -39,10 +39,6 @@ class Shop
     quantity
   end  
 
-  def update_quantity
-
-  end
-
   def sort_units(units)
     sorted_units = {}
     units.split('').map do |unit|
