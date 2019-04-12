@@ -40,9 +40,9 @@ class Shop
   end  
 
   def sort_units(units)
-    sorted_units = {}
+    sorted_units = Hash.new(0)
     units.split('').map do |unit|
-      sorted_units[unit].nil? ? sorted_units[unit] = 1 : sorted_units[unit] += 1
+      sorted_units[unit] += 1
     end
     sorted_units
   end
